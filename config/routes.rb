@@ -1,5 +1,7 @@
 Tlsearch::Application.routes.draw do
 
+  get "public/landing"
+
   match "/logout" => "sessions#destroy", :as => :logout
   match "/auth/:provider/callback" => "sessions#create"
 
@@ -52,7 +54,7 @@ Tlsearch::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'public#landing'
 
   # See how all your routes lay out with "rake routes"
 
