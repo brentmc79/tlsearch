@@ -1,4 +1,8 @@
 Tlsearch::Application.routes.draw do
+
+  match "/logout" => "sessions#destroy", :as => :logout
+  match "/auth/:provider/callback" => "sessions#create"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
